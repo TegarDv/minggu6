@@ -32,6 +32,7 @@
                                 <td>{{ $s->name }}</td>
                                 <td>{{ $s->class }}</td>
                             </tr>
+                            <a href="/students/{{$s->id}}/edit" class="btn btn-warning">Edit</a>
                             @endforeach
                         </tbody>
                     </table>
