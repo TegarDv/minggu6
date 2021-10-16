@@ -16,13 +16,15 @@
 
                     <a href="/students/create" class="btn btn-primary">Add Data</a> 
                     <br><br>
-                    
+
                     <table class="table table-responsive table-striped">
                         <thead>
                             <tr>
                                 <th>NIM</th>
                                 <th>Name</th>
                                 <th>Class</th>
+                                <th>Department</th>
+                                <th>Action</th> 
                             </tr>
                         </thead>
                         <tbody>
@@ -31,17 +33,22 @@
                                 <td>{{ $s->nim }}</td>
                                 <td>{{ $s->name }}</td>
                                 <td>{{ $s->class }}</td>
-                            </tr>
-                            <form action="/students/{{$s->id}}" method="post">
-                                <a href="/students/{{$s->id}}/edit" class="btn btn-warning">Edit</a>
+                                <td>{{ $s->department }}</td>
+                                <td>
+                                    <form action="/students/{{$s->id}}" method="post">
+                                        <a href="/students/{{$s->id}}/edit" class="btn btn-warning">Edit</a>
 
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" name="delete" class="btn btndanger">Delete</button>
-                            </form>
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" name="delete" class="btn btn-danger">Delete</button>
+                                        
+                                    </form>
+                                </td>
+                            </tr>
                             @endforeach
                         </tbody>
                     </table>
+                    <a href="/students">Halaman Home</a>
                 </div>
             </div>
         </div>
