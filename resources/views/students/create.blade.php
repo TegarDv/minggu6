@@ -25,9 +25,15 @@
                             <input type="text" class="form-control" required="required" name="name"></br>
                         </div>
                         <div class="form-group">
-                            <label for="class">Class</label>
-                            <input type="text" class="form-control" required="required" name="class"></br>
-                        </div>
+                            <label for="Kelas">Class</label>
+                            <select class="form-control" name="Kelas">
+                                @foreach($kelas as $class)
+                                    <option value="{{$class->id}}"> 
+                                        {{ $class->class_name }} 
+                                    </option>
+                                @endforeach
+                            </select></br>
+                        </div> 
                         <div class="form-group">
                             <label for="department">Department</label>
                             <input type="text" class="form-control" required="required" name="department"></br>

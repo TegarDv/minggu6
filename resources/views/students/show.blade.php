@@ -25,7 +25,7 @@
                             <label for="name">Name : {{$student->name}}</label></br>
                         </div>
                         <div class="form-group">
-                            <label for="class">Class : {{$student->class}}</label></br>
+                            <label for="class">Class : {{{{ $student->kelas->class_name}}</label></br>
                         </div>
                         <div class="form-group">
                             <label for="department">Department : {{$student->department}}</label></br>
