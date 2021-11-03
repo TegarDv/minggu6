@@ -108,6 +108,12 @@ class StudentController extends Controller
         return redirect()->route('students.index');  
     }
 
+    public function menu_nilai($id)
+    {
+        $student = Student::find($id);
+        return view('students.nilai', ['student'=>$student]);
+    }
+
     /**
      * Remove the specified resource from storage.
      *
