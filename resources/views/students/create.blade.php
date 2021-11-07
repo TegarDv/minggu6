@@ -14,7 +14,7 @@
                     </div>
                     @endif
 
-                    <form action="/students" method="post"> 
+                    <form action="/students" method="post" enctype="multipart/form-data"> 
                         @csrf
                         <div class="form-group">
                             <label for="nim">NIM</label>
@@ -24,16 +24,18 @@
                             <label for="name">Name</label>
                             <input type="text" class="form-control" required="required" name="name"></br>
                         </div>
+
                         <div class="form-group">
                             <label for="Kelas">Class</label>
                             <select class="form-control" name="Kelas">
-                                @foreach($kelas as $class)
-                                    <option value="{{$class->id}}"> 
-                                        {{ $class->class_name }} 
-                                    </option>
-                                @endforeach
+                            @foreach($kelas as $class)
+                            <option value="{{$class->id}}">
+                                {{ $class->class_name }}
+                            </option>
+                            @endforeach
                             </select></br>
-                        </div> 
+                        </div>
+                        
                         <div class="form-group">
                             <label for="department">Department</label>
                             <input type="text" class="form-control" required="required" name="department"></br>
@@ -42,6 +44,10 @@
                             <label for="phone_number">Phone Number</label>
                             <input type="text" class="form-control" required="required" name="phone_number"></br>
                         </div>
+                        <div class="form-group">
+                        <label for="photo">Profile Photo</label>
+                        <input type="file" class="form-control" required="required" name="photo"></br>
+                        <div>
                         <button type="submit" name="add" class="btn btn-primary float-right">Add Data</button>
                     </form>
                 </div>

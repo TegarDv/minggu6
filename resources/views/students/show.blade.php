@@ -14,26 +14,13 @@
                     </div>
                     @endif
 
-                    <form action="/students/{{$student->id}}" method="post">
-                        {{csrf_field()}}
-                        @method('PUT')
-                        <input type="hidden" name="id" value="{{$student->id}}"></br>
-                        <div class="form-group">
-                            <label for="nim">NIM : {{$student->nim}}</label></br>
-                        </div>
-                        <div class="form-group">
-                            <label for="name">Name : {{$student->name}}</label></br>
-                        </div>
-                        <div class="form-group">
-                            <label for="class">Class : {{{{ $student->kelas->class_name}}</label></br>
-                        </div>
-                        <div class="form-group">
-                            <label for="department">Department : {{$student->department}}</label></br>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone_number">Phone Number : {{$student->phone_number}}</label></br>
-                        </div>
-                    </form>
+                    <img width="70px" src="{{asset('storage/'.$student->photo)}}"><br><br>
+                    Name         : {{$student->name}} <br>
+                    Class        : {{$student->kelas->class_name}} <br>
+                    Department   : {{$student->department}} <br>
+                    Phone Number : {{$student->phone_number}} <br>
+                    Create at    : {{ $student->created_at }} <br>
+                    Update at    : {{ $student->updated_at }} <br><br>
                     <a href="/students">Halaman Home</a>
                 </div>
             </div>
