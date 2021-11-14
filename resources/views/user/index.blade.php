@@ -23,6 +23,7 @@
                                 <th>Username</th>
                                 <th>Name</th>
                                 <th>Email</th>
+                                <th>Role</th>
                                 <th>Action</th> 
                             </tr>
                         </thead>
@@ -32,6 +33,7 @@
                                 <td>{{ $s->username }}</td>
                                 <td>{{ $s->name }}</td>
                                 <td>{{ $s->email }}</td>
+                                <td>{{ $u->role }}</td>
                                 <td>
                                     <form action="/user/{{$s->id}}" method="post">
                                         <a href="/user/{{$s->id}}/edit" class="btn btn-warning">Edit</a>

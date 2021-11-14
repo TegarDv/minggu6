@@ -69,6 +69,13 @@
                                     </form>
                                 </div>
                             </li>
+
+                            <li class="nav-item">
+                                @can('manage-users')
+                                <a class="nav-link" href="/users">User Data</a>
+                                @endcan
+                            </li>
+                            
                         @endguest
                     </ul>
                 </div>
